@@ -48,4 +48,5 @@
 * *Minggu 10 Mei 2020*
   - Create DB Postgre [Solved]
   - Create Model Distrik & Kampung [Solved]
+  - Create Login Page [Solved]
 
