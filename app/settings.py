@@ -112,5 +112,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+LOGIN_REDIRECT_URL = '/dashboard'
+LOGIN_URL = '/login'
+LOGOUT_REDIRECT_URL = '/'
+
 ADMIN_SITE_HEADER = "WHISTLEBLOWER"
 ADMIN_SITE_INDEX = "Backend Administrator"
