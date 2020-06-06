@@ -17,11 +17,10 @@
   - Python
 
 * Framework :
-  - Django 3.0
+  - Django 3.0.0
 
 * DBMS :
-  - SQLite (On Local)
-  - Postgre (On Heroku)
+  - Postgre
 
 * Library :
   - Django REST Framework (API)
@@ -41,12 +40,22 @@
 ## Progres Pembuatan & Pengembangan 
 
 * *Sabtu 9 Mei 2020*
-  - Create Project [Solved]
-  - Create App [Solved]
-  - Create repository [Solved]
+  - Buat Project [Solved]
+  - Buat App Pengadua [Solved]
+  - Buat repository [Solved]
 
 * *Minggu 10 Mei 2020*
-  - Create DB Postgre [Solved]
-  - Create Model Distrik & Kampung [Solved]
-  - Create Login Page [Solved]
+  - Buat DB Postgre [Solved]
+  - Buat Model Distrik & Kampung [Solved]
+  - Buat Login Page [Solved]
+
+* *Sabtu 5 Juni 2020*
+  - Ganti Template [Solved]
+  - Buat Authentikasi Login / Logout [Solved]
+
+* *Sabtu 6 Juni 2020*
+  - Buat Halaman Dashboard [Solved]
+  - Buat Halaman Data Master [Solved]
+  - Buat Halaman Distrik [Solved]
+  - Buat Halaman Kampung [Solved]
 
