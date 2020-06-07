@@ -1,7 +1,9 @@
 from django.contrib import admin
 from .models import (
     Distrik,
-    Kampung
+    Kampung,
+    Kategori,
+    Aduan
 )
 
 class tb_distrik(admin.ModelAdmin):
@@ -17,5 +19,21 @@ class tb_kampung(admin.ModelAdmin):
     list_per_page = 10
     list_filter = ('distrik',)
 
+class tb_kategori(admin.ModelAdmin):
+    list_display = ('id_kategori','nama_kategori','deskripsi')
+    list_display_links = ('id_kategori','nama_kategori','deskripsi')
+    search_fields = ('nama_kampung',)
+    list_per_page = 10
+
+class tb_aduan(admin.ModelAdmin):
+    list_display = ('id_aduan','title','nama_pengadu','email','date')
+    list_display_links = ('id_aduan','title','nama_pengadu','email','date')
+    search_fields = ('title',)
+    list_per_page = 10
+    list_filter = ('date',)
+    prepopulated_fields = {'slug': ('title', )}
+
 admin.site.register(Distrik, tb_distrik)
 admin.site.register(Kampung, tb_kampung)
+admin.site.register(Kategori, tb_kategori)
+admin.site.register(Aduan, tb_aduan)

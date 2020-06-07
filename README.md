@@ -59,3 +59,8 @@
   - Buat Halaman Distrik [Solved]
   - Buat Halaman Kampung [Solved]
 
+* *Minggu 7 Juni 2020*
+  - Buat Halaman Pengaduan [Solved]
+  - Buat Halaman Detail Pengaduan [Solved]
+  
+

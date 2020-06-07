@@ -1,0 +1,45 @@
+{% extends 'base_site.html' %}
+{% block title %} {{ page_title }} {% endblock title %}
+
+{% block content %}
+<div class="page-header row no-gutters py-4">
+    <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+        <span class="text-uppercase page-subtitle">Detail Pengaduan </span>
+        <hr />
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-9 col-md-12">
+        <div class="card card-small mb-3">
+            <div class="card-body">
+                <div>
+                    <text class="header-post"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Oleh :</text>
+                    <text class="header-post-title">{{ object.nama_pengadu }} | {{ object.email }} | {{ object.no_telfon }}</text><br/>
+                    <text class="header-post"><i class="fa fa-calendar" aria-hidden="true"></i> Diadukan Pada :</text><text class="header-post-title"> {{ object.date }} </text><br />
+                    <text class="header-post"><i class="fa fa-key" aria-hidden="true"></i> KODE UNIK :</text><text class="header-post-title"> {{ object.kode_unik }} </text>
+                </div>
+                <br />
+                <text class="card-text text-center text-uppercase">Title : {{ object.title }} <i class="fa fa-bookmark"></i> Kategori : {{ object.kategori }}</text>
+                <hr />
+                <div>
+                    <p class="body-post">
+                        {{ object.deskripsi_aduan }}
+                    </p>
+                </div>
+                <hr />
+                
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-12">
+        <div class='card card-small mb-3'>
+            <div class="card-header border-bottom">
+                <h6 class="m-0">Aksi & File</h6>
+            </div>
+            <div class='card-body p-0'>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

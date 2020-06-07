@@ -3,6 +3,9 @@ from django.urls import path, include
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import views as auth_views
 from . import views
+from . views import (
+    detail_aduan,
+)
 
 urlpatterns = [
     path('', auth_views.LoginView.as_view(template_name='auth/login.html'), name='login'),
@@ -12,5 +15,6 @@ urlpatterns = [
     path('datamaster', views.datamaster, name='datamaster'),
     path('datamaster/distrik', views.distrik, name='distrik'),
     path('datamaster/kampung', views.kampung, name='kampung'),
-    path('aduan', views.aduan, name='aduan'),
+    path('pengaduan', views.aduan, name='pengaduan'),
+    path('pengaduan/detail/<slug:slug>/', detail_aduan.as_view(), name='detail'),
 ]
