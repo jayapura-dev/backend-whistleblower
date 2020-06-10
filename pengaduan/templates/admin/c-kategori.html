@@ -1,0 +1,14 @@
+<script src="\static\scripts\jquery-1.11.3.min.js"></script>
+
+<form method="post" action="{% url 'postkategori' %}">
+    {% csrf_token %}
+    <div class="form-group">
+        <input type="text" name="nama_kategori" class="form-control" placeholder="Nama Kategori"> 
+    </div>
+    <div class="form-group">
+        <textarea name="deskripsi" class="form-control" rows="3">Deksripsi . . .</textarea>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Simpan" class="mb-2 btn btn-sm btn-outline-primary mr-1" />
+    </div>
+</form>

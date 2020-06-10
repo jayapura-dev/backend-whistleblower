@@ -1,0 +1,124 @@
+{% extends 'base_site.html' %}
+{% block title %} {{ page_title }} {% endblock title %}
+
+{% block content %}
+
+<div class="page-header row no-gutters py-4">
+    <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+        <a href="{% url 'datamaster' %}"><span class="text-uppercase page-subtitle">Data Master</span></a> ->
+        <span class="text-uppercase page-subtitle">Kategori</span>
+        <hr />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <div class="card card-small mb-4">
+            <div class="card-header border-bottom">
+                
+                <a href="#tambahkategori" data-toggle="modal" class="mb-2 btn btn-sm btn-outline-primary mr-1" title="Tambah"><i class="fa fa-plus-circle"></i></a>
+            </div>
+            <div class="card-body p-0 pb-3">
+                <table class="table mb-0">
+                    <thead class="bg-light">
+                        <tr class="small">
+                            <th scope="col" class="border-0">No</th>
+                            <th scope="col" class="border-0">Nama Kategori</th>
+                            <th scope="col" class="border-0">Deskripsi</th>
+                            <th scope="col" class="border-0">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for items in kategori %}
+                        <tr class="small">
+                            <td>{{ forloop.counter }}</td>
+                            <td><strong> {{ items.nama_kategori }} </strong></td>
+                            <td>{{ items.deskripsi }}</td>
+                            <td class="small">
+                                <a data-toggle="modal" data-target="#editkategori" class="mb-2 btn btn-sm btn-outline-primary mr-1" title="Edit" onclick="edit_kategori(
+                                    '{{ items.id_kategori }}',
+                                    '{{ items.nama_kategori }}',
+                                    '{{ items.deskripsi }}'
+                                )"><i class="fa fa-edit"></i></a>
+                                <a data-toggle="modal" data-target="#deletekategori" class="mb-2 btn btn-sm btn-outline-danger mr-1" title="Hapus" onclick="delete_kategori(
+                                    '{{ items.id_kategori }}'
+                                )"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="tambahkategori" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <h6 class="modal-title" id="exampleModalLabel"><i class="fa fa-plus-circle"></i> Tambah Kategori</h6>
+                </div>
+            </div>
+            <div class="modal-body">
+              {% include  'admin/c-kategori.html' %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default waves-effect btn-sm " data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editkategori" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <h6 class="modal-title" id="exampleModalLabel"><i class="fa fa-edit"></i> Edit Kategori</h6>
+                </div>
+            </div>
+            <div class="modal-body">
+              {% include  'admin/u-kategori.html' %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default waves-effect btn-sm " data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deletekategori" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <h6 class="modal-title" id="exampleModalLabel"><i class="fa fa-trash"></i> Hapus Kategori</h6>
+                </div>
+            </div>
+            <div class="modal-body">
+              <p>Apakah anda Yakin ingin Menghapus Item ini ?</p>
+              {% include  'admin/d-kategori.html' %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default waves-effect btn-sm " data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function edit_kategori(id_kategori,nama_kategori,deskripsi){
+        $('#xid_kategori').val(id_kategori);
+        $('#xnama_kategori').val(nama_kategori);
+        $('#xdeskripsi').val(deskripsi);
+    }
+
+    function delete_kategori(id_kategori){
+        $('#idkategori').val(id_kategori);
+    }
+</script>
+
+{% endblock content %}
+

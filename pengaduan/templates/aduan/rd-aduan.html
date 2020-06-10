@@ -19,7 +19,7 @@
                     <text class="header-post"><i class="fa fa-key" aria-hidden="true"></i> KODE UNIK :</text><text class="header-post-title"> {{ object.kode_unik }} </text>
                 </div>
                 <br />
-                <text class="card-text text-center text-uppercase">Title : {{ object.title }} <i class="fa fa-bookmark"></i> Kategori : {{ object.kategori }}</text>
+                <text class="card-text text-center text-uppercase">Title : {{ object.title }} <i class="fa fa-tag"></i> Kategori : {{ object.kategori }}</text>
                 <hr />
                 <div>
                     <p class="body-post">
@@ -27,7 +27,9 @@
                     </p>
                 </div>
                 <hr />
-                
+                <button class="btn btn-sm btn-outline-danger"><i class="material-icons">delete</i></button>
+                <button class="btn btn-sm btn-outline-accent"><i class="material-icons">edit</i></button>
+                <button class="btn btn-sm btn-outline-success"><i class="fa fa-random"></i></button>
             </div>
         </div>
     </div>
@@ -37,7 +39,12 @@
                 <h6 class="m-0">Aksi & File</h6>
             </div>
             <div class='card-body p-0'>
-
+               <div class="text-center">
+                    <a href="#">
+                        <img src="/static/images/icon/catatan.png" width="80px" alt="distrik" />
+                        <h5 class="label-success">Attach File</h5>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

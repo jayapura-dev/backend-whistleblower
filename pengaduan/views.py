@@ -1,9 +1,11 @@
-from django.shortcuts import render, redirect 
+from django.shortcuts import render, redirect, HttpResponseRedirect, get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.views.generic import DetailView
 from . import models
+from .models import Kategori
+from .forms import PostKategori
 
 def login(request):
     return render(request,'auth/login.html')
@@ -41,6 +43,54 @@ def kampung(request):
     }
 
     return render(request, 'admin/r-kampung.html', contex);
+
+@login_required
+def kategori(request):
+    contex = {
+        'page_title': 'Kategori Aduan | Admin',
+        'kategori': models.Kategori.objects.all()
+    }
+
+    return render(request, 'admin/r-kategori.html', contex);
+
+@login_required
+def kategoripost(request):
+    status = 'Berhasil Menambah Data'
+
+    if request.method == 'POST':
+        form = PostKategori(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('datamaster/kategori')
+        else:
+            form = PostKategori()
+            return HttpResponseRedirect('datamaster/kategori')
+
+@login_required
+def kategoriedit(request):
+    id_kategori = request.POST['id_kategori']
+    kat = get_object_or_404(Kategori, pk=id_kategori)
+    status = 'Item telah diupdate'
+
+    if request.method == 'POST':
+        form = PostKategori(request.POST, instance=kat)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('datamaster/kategori')
+        else:
+            form = PostKategori()
+            return HttpResponseRedirect('datamaster/kategori')
+
+@login_required
+def kategoridelete(request):
+    id_kategori = request.POST['id_kategori']
+    status = 'Item Telah dihapus'
+
+    if request.method == 'POST':
+        kat = Kategori.objects.get(pk=id_kategori)
+        kat.delete()
+        return HttpResponseRedirect('datamaster/kategori')
+
 
 @login_required
 def aduan(request):

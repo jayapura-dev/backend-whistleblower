@@ -1,0 +1,8 @@
+
+<form method="post" action="{% url 'deletekategori' %}">
+    {% csrf_token %}
+    <input type="hidden" name="id_kategori" id="idkategori" /> 
+    <div class="form-group">
+        <input type="submit" value="Delete" class="mb-2 btn btn-sm btn-outline-primary mr-1" />
+    </div>
+</form>

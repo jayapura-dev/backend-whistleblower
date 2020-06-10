@@ -62,5 +62,7 @@
 * *Minggu 7 Juni 2020*
   - Buat Halaman Pengaduan [Solved]
   - Buat Halaman Detail Pengaduan [Solved]
-  
+
+* *Rabu 10 Juni 2020*
+  - Buat Fungsi CRUD Halaman Kategori [Solved]  
 
