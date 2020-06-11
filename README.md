@@ -35,9 +35,20 @@
 * HOST
   - [Server VPS]()
 
+----------------------------------------------------------------------------------------------------------------------
+## Fitur Backend :
+  - [x] Dashboard Administrator
+  - [x] 2 Level Akses (Administrator & Pemeriksa)
+  - [ ] CRUD Distrik & Kampung 
+  - [x] Statistik Aduan
+  - [x] CRUD Kategori
+  - [x] Servis REST API
+  - [ ] Menajemen User & Roles
+  - [ ] Kirim Data Aduan Ke Pemeriksa
+
 -----------------------------------------------------------------------------------------------------------------------
 
-## Progres Pembuatan & Pengembangan 
+## Progres Pembuatan & Pengembangan :
 
 * *Sabtu 9 Mei 2020*
   - Buat Project [Solved]
