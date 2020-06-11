@@ -23,7 +23,7 @@
   - Postgre
 
 * Library :
-  - Django REST Framework (API)
+  - Django REST Framework (REST API)
   - Gunicorn (Web Server)
   - WhiteNoise (Static Files)
   - Django CORS-Header (Middleware Cors Origin for API)
