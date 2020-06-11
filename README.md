@@ -64,5 +64,10 @@
   - Buat Halaman Detail Pengaduan [Solved]
 
 * *Rabu 10 Juni 2020*
-  - Buat Fungsi CRUD Halaman Kategori [Solved]  
+  - Buat Fungsi CRUD Halaman Kategori [Solved]
+
+* *Kamis 11 Juni 2020*
+  - Include rest_framework [Solved]
+  - Setup Serializer Class [Solved]
+  - Setup Generic Viewset API [Soveld]  
 
