@@ -45,6 +45,7 @@
   - [x] Servis REST API
   - [ ] Menajemen User & Roles
   - [ ] Kirim Data Aduan Ke Pemeriksa
+  - [ ] File Aduan
 
 -----------------------------------------------------------------------------------------------------------------------
 
