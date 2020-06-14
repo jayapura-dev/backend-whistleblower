@@ -15,14 +15,18 @@ class Distrik(models.Model):
 
 class Kampung(models.Model):
     id_kampung = models.AutoField(primary_key=True)
-    distrik = models.ForeignKey(Distrik, on_delete=models.CASCADE)
+    distrik = models.ForeignKey(Distrik, related_name='kampungs', on_delete=models.CASCADE)
     nama_kampung = models.CharField(max_length=100)
     kakam = models.CharField(max_length=100)
     sekam = models.CharField(max_length=100)
     kontak_kakam = models.CharField(max_length=20)
 
+    class Meta:
+        unique_together = ['distrik','id_kampung']
+        ordering = ['id_kampung']
+
     def __str__(self):
-        return self.nama_kampung
+        return '%d: %s' % (self.id_kampung, self.nama_kampung)
 
 
 class Kategori(models.Model):
@@ -46,7 +50,7 @@ class Aduan(models.Model):
     kampung = models.ForeignKey(Kampung, on_delete=models.CASCADE)
     deskripsi_aduan = models.CharField(max_length=250)
     file = models.FileField(upload_to='upload_doc/')
-    date = models.DateTimeField(auto_now=False)
+    date = models.DateTimeField(auto_now_add=True)
     status_aduan = models.CharField(max_length=15, blank=True)
     kode_unik = models.CharField(max_length=36, default=uuid.uuid4, unique=True, editable=False)
 

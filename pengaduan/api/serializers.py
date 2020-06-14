@@ -1,21 +1,41 @@
 from rest_framework import serializers
 from ..models import Distrik, Kampung, Kategori, Aduan
 
-class DistrikSerializers(serializers.ModelSerializer):
-    class Meta:
-        model = Distrik
-        fields = ('id_distrik','nama_distrik','kadis','sekdis','kotak_kadis')
-
-
 class KampungSerializers(serializers.ModelSerializer):
-    distrik = serializers.StringRelatedField(read_only=True)
 
     class Meta:
         model = Kampung
-        fields = ('id_kampung','distrik','nama_kampung','kakam','sekam','kontak_kakam')
+        fields = ('distrik','id_kampung','nama_kampung')
+
+class DistrikSerializers(serializers.ModelSerializer):
+    kampungs = KampungSerializers(many=True, read_only=True)
+
+    class Meta:
+        model = Distrik
+        fields = ('id_distrik','nama_distrik','kampungs')
 
 
 class KategoriSerialiers(serializers.ModelSerializer):
     class Meta:
         model = Kategori
         fields = ('id_kategori','nama_kategori','deskripsi')
+
+class AduanSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Aduan
+        fields = (
+            'id_aduan',
+            'title',
+            'slug',
+            'nama_pengadu',
+            'email',
+            'no_telfon',
+            'kategori',
+            'distrik',
+            'kampung',
+            'deskripsi_aduan',
+            'file',
+            'date',
+            'status_aduan',
+            'kode_unik'
+        )

@@ -27,10 +27,10 @@
   - Gunicorn (Web Server)
   - WhiteNoise (Static Files)
   - Django CORS-Header (Middleware Cors Origin for API)
-  - ![requirements](https://github.com/Ekhel/whistleblower/blob/master/requirements.txt)
+  - ![requirements](https://github.com/jayapura-dev/backend-whistleblower/blob/master/requirements.txt)
 
 * Frontend :
-  - [Frontend Whistle]()
+  - [Frontend Whistle](https://github.com/jayapura-dev/frontend-whistleblower)
 
 * HOST
   - [Server VPS]()

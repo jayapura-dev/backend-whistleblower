@@ -1,5 +1,5 @@
-from ..models import Kategori, Distrik, Kampung
-from .serializers import KategoriSerialiers, DistrikSerializers, KampungSerializers
+from ..models import Kategori, Distrik, Kampung, Aduan
+from .serializers import KategoriSerialiers, DistrikSerializers, KampungSerializers, AduanSerializers
 from rest_framework import viewsets
 
 class KategoriViewSets(viewsets.ReadOnlyModelViewSet):
@@ -13,3 +13,7 @@ class DistrikViewSets(viewsets.ReadOnlyModelViewSet):
 class KampungViewSets(viewsets.ReadOnlyModelViewSet):
     serializer_class = KampungSerializers
     queryset = Kampung.objects.all()
+
+class AduanViewSets(viewsets.ModelViewSet):
+    serializer_class = AduanSerializers
+    queryset = Aduan.objects.all()
