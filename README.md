@@ -37,12 +37,14 @@
 
 ----------------------------------------------------------------------------------------------------------------------
 ## Fitur Backend :
-  - [x] Dashboard Administrator
+  - [x] Dashboard Administrator (default Django)
+  - [x] Dashboard Administrator (Custom Setup)
   - [x] 2 Level Akses (Administrator & Pemeriksa)
   - [ ] CRUD Distrik & Kampung 
   - [x] Statistik Aduan
   - [x] CRUD Kategori
-  - [x] Servis REST API
+  - [x] Servis RESTFULL API (Pengaduan)
+  - [x] Servis API (Distrik, Kampung, Kategori, CallBack url Pengaduan)
   - [ ] Menajemen User & Roles
   - [ ] Kirim Data Aduan Ke Pemeriksa
   - [ ] File Aduan
@@ -81,5 +83,10 @@
 * *Kamis 11 Juni 2020*
   - Include rest_framework [Solved]
   - Setup Serializer Class [Solved]
-  - Setup Generic Viewset API [Soveld]  
+  - Setup Generic Viewset API [Soveld]
+
+* *Senin 15 Juni 2020*
+  - Set Permission Class rest_framework [Solved]
+  - Set corsheader CORS [Solved]
+  - Setup ViewSet API Query Distrik dan Kampung [Solved]
 

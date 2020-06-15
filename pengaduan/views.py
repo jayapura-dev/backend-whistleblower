@@ -93,7 +93,7 @@ def kategoridelete(request):
 
 
 @login_required
-def aduan(request):
+def pengaduan(request):
     contex = {
         'page_title': 'Data Aduan Masuk | Admin',
         'pengaduan': models.Aduan.objects.all()

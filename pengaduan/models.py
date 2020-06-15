@@ -26,7 +26,7 @@ class Kampung(models.Model):
         ordering = ['id_kampung']
 
     def __str__(self):
-        return '%d: %s' % (self.id_kampung, self.nama_kampung)
+        return self.nama_kampung
 
 
 class Kategori(models.Model):
