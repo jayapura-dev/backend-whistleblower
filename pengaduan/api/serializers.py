@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from ..models import Distrik, Kampung, Kategori, Aduan
+from ..models import Distrik, Kampung, Kategori, Aduan, Petunjuk
 
 class KampungSerializers(serializers.ModelSerializer):
 
@@ -37,5 +37,22 @@ class AduanSerializers(serializers.ModelSerializer):
             'file',
             'date',
             'status_aduan',
-            'kode_unik'
+            'kode_unik',
+            'anonim'
         )
+
+class PetunjukSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Petunjuk
+        fields = (
+            'id_pen',
+            'no',
+            'label',
+            'keterangan',
+            'sample'
+        )
+
+class SearchAduanSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Aduan
+        fields = ('title','deskripsi_aduan','date','status_aduan','kode_unik')

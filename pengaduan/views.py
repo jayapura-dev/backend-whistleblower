@@ -80,6 +80,7 @@ def kategoriedit(request):
         else:
             form = PostKategori()
             return HttpResponseRedirect('datamaster/kategori')
+            
 
 @login_required
 def kategoridelete(request):
@@ -100,6 +101,17 @@ def pengaduan(request):
     }
 
     return render(request, 'aduan/r-aduan.html', contex);
+
+
+@login_required
+def petunjuk(request):
+    contex = {
+        'page_title': 'Petunjuk Pengisian Form Aduan',
+        'petun': models.Petunjuk.objects.all()
+    }
+
+    return render(request, 'petunjuk/r-petunjuk.html', contex)
+
 
 class detail_aduan(DetailView):
     template_name = 'aduan/rd-aduan.html'

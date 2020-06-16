@@ -90,3 +90,8 @@
   - Set corsheader CORS [Solved]
   - Setup ViewSet API Query Distrik dan Kampung [Solved]
 
+* *Selasa 16 Juni 2020*
+  - install django_filter untuk rest_framework [Solved]
+  - Set filter backend ke Serializers Aduan [Solved]
+  - Set default Filter menggunakan filter_backend [Solved]
+

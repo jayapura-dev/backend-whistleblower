@@ -14,19 +14,19 @@
     <div class="col-lg-4">
         <div class="card card-small card-post mb-4">
             <div class="card-body">
-                <h5 class="card-title">{{ items.title }}</h5>
+                <h6 class="card-title">{{ items.title }}</h6>
                 <!--<p class="card-text text-muted"> In said to of poor full be post face snug. Introduced imprudence see say unpleasing devonshire acceptance son. Exeter longer...</p>!-->
             </div>
             <div class="card-footer border-top d-flex">
                 <div class="card-post__author d-flex">
-                    <a href="#" class="card-post__author-avatar card-post__author-avatar--small" style="background-image: url('/static/images/avatars/1.jpg');">Written by James Khan</a>
+                    <a href="#" class="card-post__author-avatar card-post__author-avatar--small" style="background-image: url('/static/images/avatars/users.png');">Written by James Khan</a>
                     <div class="d-flex flex-column justify-content-center ml-3">
-                        <span class="card-post__author-name">{{ items.nama_pengadu }}</span>
+                        <span class="card-post__author-name"><text style="font-size:12px; font-weight:bold">{{ items.nama_pengadu }}</text></span>
                         <small class="text-muted">{{ items.date }}</small>
                     </div>
                 </div>
                 <div class="my-auto ml-auto">
-                    <a class="btn btn-sm btn-white" href="{% url 'detail' items.slug %}">
+                    <a class="btn btn-sm btn-white" href="{% url 'detail' items.id_aduan %}">
                     <i class="far fa-bookmark mr-1"></i> DETAIL </a>
                 </div>
             </div>

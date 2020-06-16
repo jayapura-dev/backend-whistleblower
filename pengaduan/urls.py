@@ -20,5 +20,6 @@ urlpatterns = [
     path('editkategori', views.kategoriedit, name='editkategori'),
     path('deletekategori', views.kategoridelete, name='deletekategori'),
     path('pengaduan', views.pengaduan, name='pengaduan'),
-    path('pengaduan/detail/<slug:slug>/', detail_aduan.as_view(), name='detail'),
+    path('pengaduan/detail/<int:pk>/', detail_aduan.as_view(), name='detail'),
+    path('petunjuk', views.petunjuk, name='petunjuk'),
 ]

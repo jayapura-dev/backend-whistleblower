@@ -1,4 +1,6 @@
+import os
 from django.db import models
+from django.conf import settings
 from django.utils.crypto import get_random_string
 import uuid
 
@@ -51,8 +53,24 @@ class Aduan(models.Model):
     deskripsi_aduan = models.CharField(max_length=250)
     file = models.FileField(upload_to='upload_doc/')
     date = models.DateTimeField(auto_now_add=True)
-    status_aduan = models.CharField(max_length=15, blank=True)
+    status_aduan = models.CharField(max_length=15, blank=True, default='Not Read')
+    anonim = models.CharField(max_length=20, blank=True, default='tampil')
     kode_unik = models.CharField(max_length=36, default=uuid.uuid4, unique=True, editable=False)
 
     def __str__(self):
         return self.title
+
+    @property
+    def relative_path(self):
+        return os.path.relpath(self.file, settings.MEDIA_ROOT)
+
+
+class Petunjuk(models.Model):
+    id_pen = models.AutoField(primary_key=True)
+    no = models.CharField(max_length=10)
+    label = models.CharField(max_length=100)
+    keterangan = models.CharField(max_length=500)
+    sample = models.CharField(max_length=150)
+
+    def __str__(self):
+        return self.label

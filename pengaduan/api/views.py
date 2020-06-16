@@ -1,6 +1,7 @@
-from ..models import Kategori, Distrik, Kampung, Aduan
-from .serializers import KategoriSerialiers, DistrikSerializers, KampungSerializers, AduanSerializers
-from rest_framework import viewsets
+from ..models import Kategori, Distrik, Kampung, Aduan, Petunjuk
+from .serializers import KategoriSerialiers, DistrikSerializers, KampungSerializers, AduanSerializers, PetunjukSerializers, SearchAduanSerializers
+from rest_framework import viewsets, filters, generics
+from django_filters.rest_framework import DjangoFilterBackend
 
 class KategoriViewSets(viewsets.ReadOnlyModelViewSet):
     serializer_class = KategoriSerialiers
@@ -17,3 +18,15 @@ class KampungViewSets(viewsets.ReadOnlyModelViewSet):
 class AduanViewSets(viewsets.ModelViewSet):
     serializer_class = AduanSerializers
     queryset = Aduan.objects.all()
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['kode_unik']
+
+class PetunjukViewSets(viewsets.ModelViewSet):
+    serializer_class = PetunjukSerializers
+    queryset = Petunjuk.objects.all()
+
+class SearchAduanViewSets(viewsets.GenericViewSet):
+    serializer_class = SearchAduanSerializers
+    queryset = Aduan.objects.all()
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['kode_unik']

@@ -3,7 +3,8 @@ from .models import (
     Distrik,
     Kampung,
     Kategori,
-    Aduan
+    Aduan,
+    Petunjuk
 )
 
 class tb_distrik(admin.ModelAdmin):
@@ -33,7 +34,14 @@ class tb_aduan(admin.ModelAdmin):
     list_filter = ('date',)
     prepopulated_fields = {'slug': ('title', )}
 
+class tb_petunjuk(admin.ModelAdmin):
+    list_display = ('no','label','keterangan','sample')
+    list_display_links = ('no','label','keterangan','sample')
+    search_fields = ('label',)
+    list_per_page = 10
+
 admin.site.register(Distrik, tb_distrik)
 admin.site.register(Kampung, tb_kampung)
 admin.site.register(Kategori, tb_kategori)
 admin.site.register(Aduan, tb_aduan)
+admin.site.register(Petunjuk, tb_petunjuk)
