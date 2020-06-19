@@ -95,3 +95,9 @@
   - Set filter backend ke Serializers Aduan [Solved]
   - Set default Filter menggunakan filter_backend [Solved]
 
+* *Sabtu 20 Juni 2020*
+  - Install Django Rest Knox [Solved]
+  - Buat Register API Via Knox Token [Solved] Tested Frontend [Solved]
+  - Buat Instance User [Solved]
+  - Setup Response, Basic Authentikasi API dan Session Authentikasi API [Solved]
+
