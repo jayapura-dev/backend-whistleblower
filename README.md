@@ -10,6 +10,8 @@
   - Whistle Blower Adalah Sistem Pengaduan Electronik yang dibuat khusus untuk Lembaga / Dinas
   yang menjalankan Fungsi pemeriksaan Keuangan aset dll.
 
+  <p align="center"><img src="https://github.com/jayapura-dev/backend-whistleblower/blob/master/media/images/mockup_backend_whistle.png" width="800px"></p>
+
   ----------------------------------------------------------------------------------------------------------------------
 
 ## System Requirements :
