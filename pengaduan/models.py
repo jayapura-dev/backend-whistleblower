@@ -1,6 +1,7 @@
 import os
 from django.db import models
 from django.conf import settings
+from django.contrib.auth.models import User
 from django.utils.crypto import get_random_string
 import uuid
 
@@ -55,6 +56,7 @@ class Aduan(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     status_aduan = models.CharField(max_length=15, blank=True, default='Not Read')
     anonim = models.CharField(max_length=20, blank=True, default='tampil')
+    owner = models.ForeignKey(User, related_name='useraduan', null=True, on_delete=models.CASCADE)
     kode_unik = models.CharField(max_length=36, default=uuid.uuid4, unique=True, editable=False)
 
     def __str__(self):

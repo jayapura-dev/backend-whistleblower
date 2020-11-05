@@ -1,8 +1,13 @@
 from django.shortcuts import render, redirect, HttpResponseRedirect, get_object_or_404
 from django.http import HttpResponse
+
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import Group
+from django.contrib.auth.models import User
+
 from django.urls import reverse_lazy
 from django.views.generic import DetailView
+
 from . import models
 from .models import Kategori
 from .forms import PostKategori
@@ -121,3 +126,20 @@ class detail_aduan(DetailView):
         page_title = 'Detail Aduan | Admin'
         context = super().get_context_data(**kwargs)
         return context
+
+@login_required
+def menajemen_user(request):
+    contex = {
+        'page_title': 'Users List',
+    }
+
+    return render(request, 'akun/menu.html', contex)
+
+@login_required
+def akun(request):
+    contex = {
+        'page_title': 'Users List',
+        'user': User.objects.all()
+    }
+
+    return render(request, 'akun/r-akun.html', contex)
